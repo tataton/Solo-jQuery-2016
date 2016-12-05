@@ -13,7 +13,7 @@ $(document).on('click', 'button', function() {
   // Button handler.
   var buttonColor = $(this).data('color');
   // Add a div.
-  var newDivText = '<div class="color-cube ' + buttonColor + '">';
+  var newDivText = '<div class="color-cube ' + buttonColor + '"><img src="devTransparent.png" width="100"></div>';
   $('.container').append(newDivText);
   // Increment counter and update label text.
   updateLabel(buttonColor, true);
@@ -28,6 +28,7 @@ $(document).on('click', '.color-cube', function() {
   class. */
   $(this).removeClass('color-cube');
   var colorRemoved = $(this).attr('class');
+  $(this).remove();
   updateLabel(colorRemoved, false);
 });
 
